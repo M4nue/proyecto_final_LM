@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %} LISTA {% endblock %}
+
+{% block contenido %}
+
+{% if nombre %}
+    <div>
+        <table id="tabla">
+            <tr>
+                <th><h5> Nombre</h5></th>
+                <th><h5> Precio de compra</h5></th>
+                <th><h5> Precio de venta</h5></th>
+                <th><h5> Detalle </h5></th>
+            </tr>
+            
+            <tr>
+                <td><h5>{{ nombre }}</h5></td>
+                <td><h5>{{ precio_compra }}</h5></td>
+                <td><h5>{{ precio_venta }}</h5></td>
+                <td><a href="/detalle/{{ nombre }}">{{ nombre }}</a></td>
+
+            </tr>
+            
+        </table>
+    </div>
+    {% else %}
+        <h2>Cajas Disponibles</h2>
+        <div>
+            <table id="tabla">
+                <tr>
+                    <th><h5> Nombre</h5></th>
+                    <th><h5> Precio de compra</h5></th>
+                    <th><h5> Precio de venta</h5></th>
+                    <th><h5> Detalle </h5></th>
+                    
+                </tr>
+                {% for caja in cajas %}
+                <tr>
+                    <td><h5>{{ caja }}</h5></td>
+                    <td><h5>{{ precio_compra[loop.index0] }}</h5></td>
+                    <td><h5>{{ precio_venta[loop.index0] }}</h5></td>
+                    <td><a href="/detalle/{{ caja }}">{{ caja }}</a></td>
+
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
+

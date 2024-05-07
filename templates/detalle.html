@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %} Detalle de {{ nombre }} {% endblock %}
+
+{% block contenido %}
+  <div class="container mt-5">
+    <h2 class="text-center">Detalle de {{ nombre }}</h2>
+    <hr>
+    <div style="detalles1">
+      <div style="detalles2">
+        <h3 class="text-center">Información Detallada</h3>
+        <ul class="list-group text-center">
+          <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
+          <!-- Agrega más elementos aquí según sea necesario -->
+        </ul>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
