@@ -1,19 +1,27 @@
-from flask import Flask, render_template, request, abort
+from flask import Flask, render_template, abort
+import requests
 from static import funciones
 archivo_json = funciones.cargar_json()
 app = Flask(__name__)
 
 @app.route('/')
 def inicio():
-    return render_template("inicio.html")
+    codigo = requests.get("https://api.thecatapi.com/v1/images/search?limit=10")
+    contenido=codigo.json()
+    url_imagenes = []
+    for url in contenido:
+        url_imagenes.append(url["url"])
+
+    return render_template("inicio.html",imagenes=url_imagenes)
 
 @app.route('/buscador')
 def buscador():
+
     return render_template("buscador.html")
 
 @app.route('/lista', methods=["post"])
 def lista():
-    nombre = request.form.get("Caja")
+#    nombre = request.form.get("Caja")
     descoincidencias_nombres_caja = []
     precio_compra_descoincidencias = []
     precio_venta_descoincidencias = []
@@ -22,10 +30,10 @@ def lista():
     precio_venta = []
 
     for caja in archivo_json:
-        if nombre == caja["nombre"]:
+#        if nombre == caja["nombre"]:
             return render_template("lista.html", nombre=caja["nombre"], precio_compra=caja["precio_compra"], precio_venta=caja["sale_price_text"])
         
-        elif nombre != "":
+#        elif nombre != "":
             
             
             if caja["nombre"].count(nombre) != 0:
@@ -39,7 +47,7 @@ def lista():
                 precio_compra_descoincidencias.append(caja["precio_compra"])
                 precio_venta_descoincidencias.append(caja["sale_price_text"])
 
-        else:
+#        else:
             descoincidencias_nombres_caja.append(caja["nombre"])
             precio_compra_descoincidencias.append(caja["precio_compra"])
             precio_venta_descoincidencias.append(caja["sale_price_text"])
