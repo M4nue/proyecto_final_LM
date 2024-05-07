@@ -56,16 +56,10 @@ ul li {
   text-decoration: none;
 }
 
-
-
-
-
-
 #content {
   text-align: center;
   width: 100%;
   padding: 10% 4em;
-  float: left;
 }
 
 /* estilos propios */
@@ -110,8 +104,8 @@ footer a img {
 
 
 #tabla {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  /*margin: 10% auto;*/
 }
 
 #tabla td {
