@@ -1,0 +1,330 @@
+[
+    {
+        "nombre": "Caja Picadura",
+        "precio_compra": "$0.27",
+        "imagen": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg",
+        "descripción": {
+            "contenido": [
+                {
+                    "objeto": "SG 553 | Metal pesado",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Glock-18 | Polímero transparente",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "M249 | R.P.R.V.",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "CZ75-Auto | Circaetus",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "UMP-45 | Oscilador",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Revólver R8 | Carne de desguace",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Nova | Viento",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "P250 | Ciberescudo",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Negev | dev_texture",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MAC-10 | Machacabotones",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Desert Eagle | Disciplina de gatillo",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "AK-47 | Pizarra",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MP9 | Cadena alimenticia",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "XM1014 | TQM",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Galil AR | Aberración cromática",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "USP-S | El Traidor",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "M4A4 | Colores vivos",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "¡o los guantes extraordinariamente raros!",
+                    "color": "ffd700"
+                }
+            ],
+            "tipo": "Contenedor de grado especiál"
+        },
+        "sale_price_text": "$0.26"
+    },
+    {
+        "nombre": "Caja Raptor",
+        "precio_compra": "$0.29",
+        "imagen": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg",
+        "descripción": {
+            "contenido": [
+                {
+                    "objeto": "Negev | Ultraligero",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "P2000 | Retorcido",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "SG 553 | «Ol' Rusty»",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "SSG 08 | Ordenador central 001",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "P250 | VHS",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "P90 | Vagón",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "PP-Bizon | Rúnica",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "MAG-7 | Monstruo marino",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Tec-9 | Hermano",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MAC-10 | Seducción",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Galil AR | Phoenix Connexion",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MP5-SD | Canibalización",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "M4A4 | Hada de los Dientes",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Glock-18 | Vogue",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "XM1014 | Sepultada",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Desert Eagle | PrintStream",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "AK-47 | Legión de Anubis",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "¡o un objeto especial extraordinariamente raro!",
+                    "color": "ffd700"
+                }
+            ],
+            "tipo": "Contenedor de grado básico"
+        },
+        "sale_price_text": "$0.28"
+    },
+    {
+        "nombre": "Caja Retroceso",
+        "precio_compra": "$0.21",
+        "imagen": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg",
+        "descripción": {
+            "contenido": [
+                {
+                    "objeto": "FAMAS | Miau 36",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Galil AR | Destroyer",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "M4A4 | Polímero",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "MAC-10 | Bandera macaca",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Negev | Déjame",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "UMP-45 | Barricada",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Glock-18 | Invernal",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Revólver R8 | 8 loco",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "M249 | Centro urbano",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "SG 553 | Ciberdragón",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "P90 | Gas a fondo",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Berettas dobles | Flora carnívora",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "AK-47 | Hielo carbonizado",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "P250 | Visiones",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Recortada | Beso♥Amor",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "USP-S | PrintStream",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "AWP | Aberración cromática",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "¡o los guantes extraordinariamente raros!",
+                    "color": "ffd700"
+                }
+            ],
+            "tipo": "Contenedor de grado limitado"
+        },
+        "sale_price_text": "$0.20"
+    },
+    {
+        "nombre": "Caja de armas de la Operación Wildfire",
+        "precio_compra": "$2.13",
+        "imagen": "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/730/8dbc71957312bbd3baea65848b545be9eae2a355.jpg",
+        "descripción": {
+            "contenido": [
+                {
+                    "objeto": "PP-Bizon | Zona fótica",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Berettas dobles | Cartel",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "MAC-10 | Cocodrilo azul",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "SSG 08 | Necropos",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "Tec-9 | Jambiya",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "USP-S | Conducto de plomo",
+                    "color": "4b69ff"
+                },
+                {
+                    "objeto": "FAMAS | Valencia",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Five-seveN | Triunvirato",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "Glock-18 | Legión real",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MAG-7 | Pretoriana",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "MP7 | Luciferino",
+                    "color": "8847ff"
+                },
+                {
+                    "objeto": "AWP | Cuerpo de élite",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Desert Eagle | Dragón Kumicho",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "Nova | Hiperbestia",
+                    "color": "d32ce6"
+                },
+                {
+                    "objeto": "AK-47 | Bujía inyectora",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "M4A4 | Estrella de combate",
+                    "color": "eb4b4b"
+                },
+                {
+                    "objeto": "¡o el extraordinariamente raro Cuchillo Bowie!",
+                    "color": "ffd700"
+                }
+            ],
+            "tipo": "Contenedor de grado básico"
+        },
+        "sale_price_text": "$2.04"
+    }
+]
