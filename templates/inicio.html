@@ -4,5 +4,13 @@
 {%block title%}INICIO{%endblock%}
 
 {% block contenido %}
-<a href="/buscador"><img src="../static/img/csgo.png" alt="enlace_logo"></a>
+<table>
+{% for imagen in imagenes %} 
+    <tr>
+        <th>
+            <img src="{{ imagen }}" alt="Gato">
+        </th>
+    </tr>
+    {% endfor %}
+</table>
 {% endblock %}
