@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}RAZAS{% endblock %}
+
+{% block contenido %}
+<h1><strong>RAZAS DISPONIBLES</strong></h1>
+<ul>
+{% for raza in razas_gato %}
+    <li>{{ raza }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
