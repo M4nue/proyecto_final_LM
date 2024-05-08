@@ -59,7 +59,7 @@ ul li {
 #content {
   text-align: center;
   width: 100%;
-  padding: 10% 4em;
+  padding: 10% ;
 }
 
 /* estilos propios */
@@ -104,14 +104,9 @@ footer a img {
 
 
 #tabla {
-  max-width: 100%;
-  /*margin: 10% auto;*/
-}
-
-#tabla td {
   text-align: center;
+  width: 100%;
 }
-
 
 #detalles1{
   display: flex;
