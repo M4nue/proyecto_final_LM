@@ -4,10 +4,8 @@
 
 {% block contenido %}
     <form method="post" action="/lista">
-        <label for="Caja" class="form-label">Escriba nombre de la caja</label>
-        <input type="text" placeholder="caja" name="Caja" value="{{ nombre }}">
-
-        
+        <label for="Caja" class="form-label">Escriba nombre de la raza</label>
+        <input type="text" placeholder="raza" name="raza" value="{{ raza }}">
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>
 {% endblock %}
