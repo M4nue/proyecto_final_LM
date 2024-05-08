@@ -1,7 +1,9 @@
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, request, abort
 import requests
 from static import funciones
-archivo_json = funciones.cargar_json()
+
+datos_razas=[]
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,6 +16,20 @@ def inicio():
 
     return render_template("inicio.html",imagenes=url_imagenes)
 
+
+@app.route('/razas')
+def razas():
+    razas = requests.get("https://api.thecatapi.com/v1/breeds")
+    razas_json= razas.json()
+    datos_razas.append(razas_json)
+    list_raza = []
+    for raza in razas_json:
+        list_raza.append(raza["name"])
+    list_raza.sort()
+    return render_template("razas.html",razas_gato=list_raza)
+
+
+
 @app.route('/buscador')
 def buscador():
 
@@ -21,41 +37,14 @@ def buscador():
 
 @app.route('/lista', methods=["post"])
 def lista():
-#    nombre = request.form.get("Caja")
-    descoincidencias_nombres_caja = []
-    precio_compra_descoincidencias = []
-    precio_venta_descoincidencias = []
-    coincidencias =[]
-    precio_compra = []
-    precio_venta = []
-
-    for caja in archivo_json:
-#        if nombre == caja["nombre"]:
-            return render_template("lista.html", nombre=caja["nombre"], precio_compra=caja["precio_compra"], precio_venta=caja["sale_price_text"])
-        
-#        elif nombre != "":
+    raza = requests.form.get('raza')
+    for datos in datos_razas:
+        if raza == datos["name"]:
+            return render_template("lista.html", nombre=datos["name"], enlaces_info=datos["vcahospitals_url"], Temperamento=datos["temperament"],
+                                origen=datos["origin"], descripcion=datos["description"], vida=datos["life_span"],relacion_perros=datos["dog_friendly"],
+                                imagen=datos["reference_image_id"])
             
-            
-            if caja["nombre"].count(nombre) != 0:
-                coincidencias.append(caja["nombre"])
-                precio_compra.append(caja["precio_compra"])
-                precio_venta.append(caja["sale_price_text"])
 
-                #return render_template("lista.html", nombre=caja["nombre"], precio_compra=caja["precio_compra"], precio_venta=caja["sale_price_text"]) 
-            else:
-                descoincidencias_nombres_caja.append(caja["nombre"])
-                precio_compra_descoincidencias.append(caja["precio_compra"])
-                precio_venta_descoincidencias.append(caja["sale_price_text"])
-
-#        else:
-            descoincidencias_nombres_caja.append(caja["nombre"])
-            precio_compra_descoincidencias.append(caja["precio_compra"])
-            precio_venta_descoincidencias.append(caja["sale_price_text"])
-
-    if len(coincidencias)==0:
-        return render_template("lista.html", cajas=descoincidencias_nombres_caja, precio_compra=precio_venta_descoincidencias, precio_venta=precio_venta_descoincidencias) 
-    else:
-        return render_template("lista.html", cajas=coincidencias,precio_compra=precio_compra,precio_venta=precio_venta) 
 
 @app.route('/detalle/<nombre>')
 def cajanombre(nombre):
