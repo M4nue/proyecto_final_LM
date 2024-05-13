@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{%block title%}INICIO{%endblock%}
+
+{% block contenido %}
+<table id="tabla">
+{% for imagen in imagenes %} 
+    <tr>
+        <th>
+            <img src="{{ imagen }}" alt="Gato">
+        </th>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
