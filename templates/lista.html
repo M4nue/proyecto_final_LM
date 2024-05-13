@@ -3,46 +3,34 @@
 
 {% block contenido %}
 
-{% if raza %}
-    <div>
-        <table id="tabla">
-            <tr>
-                <th><h5> Nombre</h5></th>
-                <th><h5> Precio de compra</h5></th>
-                <th><h5> Precio de venta</h5></th>
+{% if nombre %}
 
-            </tr>
-            
-            <tr>
-                <td><h5>{{ nombre }}</h5></td>
-                <td><h5>{{ enlaces_info }}</h5></td>
-                <td><h5>{{ Temperamento }}</h5></td>
+    <ul>
+        <li>
+            <p>Nombre: {{ nombre }}</p>
+        </li>
+        <li>
+            <p>Enlace informativo: <a href="{{ enlaces_info }}">INFO</a></p>
+        </li>
+        <li>
+            <p>Temperamento: {{ Temperamento }}</p>
+        </li>
+        <li>
+            <p>Origen: {{ origen }}</p>
+        </li>
+        <li>
+            <p>Esperanza de vida: {{ vida }}</p>
+        </li>
+        <li>
+            <p>Relación con perros (0-5): {{ relacion_perros }}</p>
+        </li>
+        <li>
+            <p><img src="https://cdn2.thecatapi.com/images/{{ imagen }}.jpg" alt="Gato"></p>
+        </li>
+        <li>
+            <p>Descripción: {{ descripcion }}</p>
+        </li>
+    </ul>   
+{% endif %}
 
-            </tr>
-            
-        </table>
-    </div>
-    {% else %}
-        <h2>Razas Disponibles</h2>
-        <div>
-            <table id="tabla">
-                <tr>
-                    <th><h5> Nombre</h5></th>
-                    <th><h5> Precio de compra</h5></th>
-                    <th><h5> Precio de venta</h5></th>
-                    <th><h5> Detalle </h5></th>
-                    
-                </tr>
-
-                <tr>
-                    <td><h5>{{ caja }}</h5></td>
-                    <td><h5>{{ precio_compra[loop.index0] }}</h5></td>
-                    <td><h5>{{ precio_venta[loop.index0] }}</h5></td>
-                    <td><a href="/detalle/{{ caja }}">{{ caja }}</a></td>
-
-                </tr>
-            </table>
-        </div>
-    {% endif %}
 {% endblock %}
-
