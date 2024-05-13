@@ -1,16 +1,11 @@
 {% extends "base.html" %}
 
-
-{%block title%}INICIO{%endblock%}
+{% block title %}RAZAS{% endblock %}
 
 {% block contenido %}
-<table id="tabla">
-{% for imagen in imagenes %} 
-    <tr>
-        <th>
-            <img src="{{ imagen }}" alt="Gato">
-        </th>
-    </tr>
-    {% endfor %}
-</table>
+<ul>
+{% for raza in razas_gato %}
+    <li> {{ raza }} </li>
+{% endfor %}
+</ul>
 {% endblock %}
