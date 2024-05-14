@@ -6,12 +6,17 @@
   <div class="container mt-5">
     <h2 class="text-center">Detalle de {{ nombre }}</h2>
     <hr>
-    <div style="detalles1">
-      <div style="detalles2">
+    <div>
+      <div>
         <h3 class="text-center">Información Detallada</h3>
         <ul class="list-group text-center">
           <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
-          <!-- Agrega más elementos aquí según sea necesario -->
+          <li>
+            <p class="list-group-item">Descripción: {{descripcion}}</p>
+          </li>
+          <li>
+            <p><img src="https://cdn2.thecatapi.com/images/{{ imagen }}.jpg" alt="Gato"></p>
+          </li>
         </ul>
       </div>
     </div>
