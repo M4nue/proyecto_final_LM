@@ -5,7 +5,7 @@
 {% block contenido %}
 <ul>
 {% for raza in razas_gato %}
-    <li> {{ raza }} </li>
+    <li><a href="/detalle/{{id[razas_gato.index(raza)]}}"> {{ raza }} </a></li>
 {% endfor %}
 </ul>
 {% endblock %}
