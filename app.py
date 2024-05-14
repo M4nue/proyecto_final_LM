@@ -14,13 +14,16 @@ def razas():
 
     for raza in razas_json:
         datos_razas.append(raza)
-    
+
     list_raza = []
+    list_id= []
     for raza in razas_json:
         list_raza.append(raza["name"])
+        list_id.append(raza["id"])
     list_raza.sort()
+
     
-    return render_template("inicio.html",razas_gato=list_raza)
+    return render_template("inicio.html",razas_gato=list_raza, id=list_id)
 
 
 @app.route('/10img')
@@ -48,19 +51,18 @@ def lista():
         if raza == datos["name"]:
             enlaces_info = datos["vetstreet_url"] if "vetstreet_url" in datos else "No disponible"
             return render_template("lista.html",nombre=datos["name"],enlaces_info=enlaces_info,Temperamento=datos["temperament"],
-                                origen=datos["origin"],descripcion=datos["description"],vida=datos["life_span"],relacion_perros=datos["dog_friendly"],
-                                imagen=datos["reference_image_id"])
+                                origen=datos["origin"],descripcion=datos["description"],vida=datos["life_span"],
+                                relacion_perros=datos["dog_friendly"],imagen=datos["reference_image_id"])
     return abort(404)
 
 
 
-'''
-@app.route('/detalle/<nombre>')
-def cajanombre(nombre):
-    for caja in archivo_json:
-        if caja["nombre"] == nombre:
-            return render_template("detalle.html", nombre=nombre)
+@app.route('/detalle/<id>')
+def razaid(id):
+    for raza in datos_razas :
+        if raza["id"] == id:
+            return render_template("detalle.html", nombre=raza["name"],descripcion=raza["description"],imagen=raza["reference_image_id"])
     return abort(404)
-*/'''
+
 
 app.run("0.0.0.0",5000,debug=True)
