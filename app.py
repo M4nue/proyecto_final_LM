@@ -1,9 +1,19 @@
 from flask import Flask, render_template, abort, request
 import requests
-import json
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 datos_razas=[]
+
+load_dotenv ()
+API_KEY=os.getenv('KEY')
+
+def divide_chunks(lista, n):
+    for i in range(0, len(lista), n):
+        yield lista[i:i + n]
+
+
 
 
 @app.route('/')
@@ -16,14 +26,19 @@ def razas():
         datos_razas.append(raza)
 
     list_raza = []
-    list_id= []
-    for raza in razas_json:
+    list_id = []
+    for raza in datos_razas:
         list_raza.append(raza["name"])
         list_id.append(raza["id"])
-    list_raza.sort()
 
-    
-    return render_template("inicio.html",razas_gato=list_raza, id=list_id)
+
+    # Paginación
+    pagina = request.args.get('page', 1, type=int)
+    tamano_pagina = 15  # Número de razas por página
+    paginas_razas = list(divide_chunks(list_raza, tamano_pagina))
+    raza_paginada = paginas_razas[pagina - 1]
+
+    return render_template("inicio.html", razas_gato=raza_paginada, id=list_id, paginas=len(paginas_razas))
 
 
 @app.route('/10img')
@@ -59,9 +74,12 @@ def lista():
 
 @app.route('/detalle/<id>')
 def razaid(id):
-    for raza in datos_razas :
+    for raza in datos_razas:
         if raza["id"] == id:
-            return render_template("detalle.html", nombre=raza["name"],descripcion=raza["description"],imagen=raza["reference_image_id"])
+            imagenes_get = requests.get("https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=" + raza["id"] + "&api_key=" + API_KEY, timeout=10)
+            imagenes_json = imagenes_get.json()
+            url_imagenes = [imagen["url"] for imagen in imagenes_json]
+            return render_template("detalle.html", nombre=raza["name"], descripcion=raza["description"], imagenes=url_imagenes)
     return abort(404)
 
 
