@@ -5,3 +5,5 @@ contenido=codigo.json()
 
 print(codigo)
 print(contenido)
+
+https://api.thecatapi.com/v1/images/{image_id}
