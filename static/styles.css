@@ -116,3 +116,48 @@ footer a img {
 #detalles2{
   width: 50%;
 }
+
+/* Estilos para la tabla */
+.table-container {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilos para las celdas de la tabla */
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+
+.table-container th,
+.table-container td {
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Estilos para las filas pares de la tabla */
+.table-container tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Estilos para el encabezado de la tabla */
+.table-container th {
+  background-color: #28a745; /* Color de fondo azul de Bootstrap */
+  color: white;
+}
+
+/* Estilos para los números de página */
+.pagination a,
+.pagination span {
+  background-color: #28a745; /* Color de fondo azul de Bootstrap */
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.pagination a:hover {
+  background-color: #28a745; /* Cambia el color al pasar el ratón por encima */
+}
