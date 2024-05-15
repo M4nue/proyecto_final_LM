@@ -8,14 +8,20 @@
     <hr>
     <div>
       <div>
-        <h3 class="text-center">Información Detallada</h3>
         <ul class="list-group text-center">
           <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
           <li>
-            <p class="list-group-item">Descripción: {{descripcion}}</p>
+            <p class="list-group-item">Descripción: {{ descripcion }}</p>
           </li>
           <li>
-            <p><img src="https://cdn2.thecatapi.com/images/{{ imagen }}.jpg" alt="Gato"></p>
+            <p>Imágenes:</p>
+            <div class="row">
+              {% for imagen in imagenes %}
+                <div class="col-md-4">
+                  <img src="{{ imagen }}" class="img-fluid" alt="Gato">
+                </div>
+              {% endfor %}
+            </div>
           </li>
         </ul>
       </div>
