@@ -76,7 +76,7 @@ def lista():
 def razaid(id):
     for raza in datos_razas:
         if raza["id"] == id:
-            imagenes_get = requests.get("https://api.thecatapi.com/v1/images/search?limit=1&breed_ids=" + raza["id"] + "&api_key=" + API_KEY, timeout=10)
+            imagenes_get = requests.get("https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=" + raza["id"] + "&api_key=" + API_KEY, timeout=10)
             imagenes_json = imagenes_get.json()
             url_imagenes = [imagen["url"] for imagen in imagenes_json]
             return render_template("detalle.html", nombre=raza["name"], descripcion=raza["description"], imagenes=url_imagenes)
