@@ -1,33 +1,31 @@
-html {
+html, #logo {
   height: 100%;
+  width: 100%;
 }
 
 body {
-  font: normal .80em 'trebuchet ms', arial, sans-serif;
-  background: #FFF;
+  font: .80em 'trebuchet ms', arial, sans-serif;
+  background-color: #FFF;
   color: #555;
 }
 
-ul{
-  list-style-type: none;
+ul {
+  list-style: none;
 }
 
 ul li {
-  margin: 0 0 6px 0;
+  margin: 0 0 6px;
   padding: 0 0 4px 5px;
   line-height: 1.5em;
 }
 
 #header {
-  background: #000000;
+  background-color: #000;
   border-bottom: 5px solid #c3ffa8;
   height: 177px;
 }
 
-
 #logo {
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-between;
   background: transparent;
@@ -38,54 +36,42 @@ ul li {
   margin-left: 3%;
 }
 
-
-#logo h1,
-#logo h2 {
-  font: normal 300% 'century gothic', arial, sans-serif;
+#logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
+  font: normal 200% 'century gothic', arial, sans-serif;
   border-bottom: 0;
   text-transform: none;
   margin: 0 0 0 9px;
-}
-
-#logo_text h1,
-#logo_text h1 a,
-#logo_text h1 a:hover {
-  padding: 22px 0 0 0;
+  padding: 22px 0 0;
   color: #FFF;
   letter-spacing: 0.1em;
   text-decoration: none;
 }
 
-#content {
+#content, #tabla {
   text-align: center;
   width: 100%;
-  padding: 10% ;
 }
 
-/* estilos propios */
+#content {
+  padding: 10%;
+}
 
 .menu_propio {
   margin-right: 10%;
 }
 
-
-.nav-link.btn.btn-success {
-  color: #ffffff;
-  /* Texto en blanco botones menu */
+.nav-link.btn.btn-success, .pagination a, .pagination span {
+  color: #FFF;
 }
 
-/* Ajustes para los enlaces dentro del menú desplegable */
 .dropdown-menu .dropdown-item {
-  color: #000000;
-  /* Color del texto para los enlaces del menú desplegable */
+  color: #000;
 }
 
 #imagen_logo_menu {
   width: 35%;
   height: 85%;
 }
-
-
 
 footer {
   position: fixed;
@@ -94,70 +80,66 @@ footer {
   width: 100%;
   height: 5%;
   text-align: center;
-  background-color: rgb(0, 0, 0);
-  color: white;
+  background-color: #000;
+  color: #FFF;
 }
 
 footer a img {
   width: 2%;
 }
 
-
-#tabla {
-  text-align: center;
-  width: 100%;
-}
-
-#detalles1{
+#detalles1 {
   display: flex;
   justify-content: center;
 }
 
-#detalles2{
+#detalles2 {
   width: 50%;
 }
 
-/* Estilos para la tabla */
 .table-container {
   width: 100%;
   margin-bottom: 20px;
 }
 
-/* Estilos para las celdas de la tabla */
 .table-container table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #ddd;
 }
 
-.table-container th,
-.table-container td {
+.table-container th, .table-container td {
   padding: 8px;
   border: 1px solid #ddd;
 }
 
-/* Estilos para las filas pares de la tabla */
 .table-container tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Estilos para el encabezado de la tabla */
 .table-container th {
-  background-color: #28a745; /* Color de fondo azul de Bootstrap */
-  color: white;
-}
-
-/* Estilos para los números de página */
-.pagination a,
-.pagination span {
-  background-color: #28a745; /* Color de fondo azul de Bootstrap */
-  color: white;
-  padding: 5px 10px;
-  text-decoration: none;
-  border-radius: 3px;
-  margin-right: 5px;
+  background-color: #28a745;
+  color: #FFF;
 }
 
 .pagination a:hover {
-  background-color: #28a745; /* Cambia el color al pasar el ratón por encima */
+  background-color: #28a745;
+}
+
+
+.pagination a {
+  background-color: #28a745; /* Color de fondo de .btn-success */
+  color: #FFF; /* Color de texto de .btn-success */
+  padding: 5px 10px; /* Espaciado interno para dar forma al enlace */
+  text-decoration: none; /* Eliminar el subrayado del enlace */
+  border-radius: 3px; /* Bordes redondeados como .btn-success */
+  margin-right: 5px; /* Espacio entre los enlaces de paginación */
+}
+
+.pagination span {
+  background-color: #28a745; /* Color de fondo de .btn-success */
+  color: #FFF; /* Color de texto de .btn-success */
+  padding: 5px 10px; /* Espaciado interno para dar forma al enlace */
+  border-radius: 3px; /* Bordes redondeados como .btn-success */
+  margin-right: 5px; /* Espacio entre los enlaces de paginación */
 }
