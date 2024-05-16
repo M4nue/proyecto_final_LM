@@ -5,12 +5,11 @@
 
 {% block contenido %}
 <table id="tabla">
-{% for imagen in imagenes %} 
     <tr>
         <th>
             <img src="{{ imagen }}" alt="Gato">
         </th>
+        {{ img_id }}
     </tr>
-    {% endfor %}
 </table>
 {% endblock %}
