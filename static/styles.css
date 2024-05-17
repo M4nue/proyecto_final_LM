@@ -143,3 +143,21 @@ footer a img {
   border-radius: 3px; /* Bordes redondeados como .btn-success */
   margin-right: 5px; /* Espacio entre los enlaces de paginación */
 }
+
+.table-responsive {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+.table-responsive img {
+  width: 100%;
+  height: auto;
+}
+.table-responsive button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  font-size: 16px;
+}
