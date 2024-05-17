@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}RAZAS{% endblock %}
+{% block title %}JUEGO{% endblock %}
 
 {% block contenido %}
 <table id="tabla" class="table-responsive">
     <tr>
-        {{ id }}
         <td>
             <form method="POST" action="{{ url_for('verificar_respuesta') }}">
                 <input type="hidden" name="id_correcto" value="{{ id }}">
