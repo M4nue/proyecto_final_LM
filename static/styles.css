@@ -128,20 +128,20 @@ footer a img {
 
 
 .pagination a {
-  background-color: #28a745; /* Color de fondo de .btn-success */
-  color: #FFF; /* Color de texto de .btn-success */
-  padding: 5px 10px; /* Espaciado interno para dar forma al enlace */
-  text-decoration: none; /* Eliminar el subrayado del enlace */
-  border-radius: 3px; /* Bordes redondeados como .btn-success */
-  margin-right: 5px; /* Espacio entre los enlaces de paginación */
+  background-color: #28a745;
+  color: #FFF;
+  padding: 5px 10px;
+  text-decoration: none;
+  border-radius: 3px;
+  margin-right: 5px; 
 }
 
 .pagination span {
-  background-color: #28a745; /* Color de fondo de .btn-success */
-  color: #FFF; /* Color de texto de .btn-success */
-  padding: 5px 10px; /* Espaciado interno para dar forma al enlace */
-  border-radius: 3px; /* Bordes redondeados como .btn-success */
-  margin-right: 5px; /* Espacio entre los enlaces de paginación */
+  background-color: #28a745;
+  color: #FFF;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 5px; 
 }
 
 .table-responsive {
