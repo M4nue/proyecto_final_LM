@@ -1,15 +1,26 @@
 {% extends "base.html" %}
 
-
-{%block title%}RAZAS{%endblock%}
+{% block title %}RAZAS{% endblock %}
 
 {% block contenido %}
-<table id="tabla">
+<table id="tabla" class="table-responsive">
     <tr>
-        <th>
-            <img src="{{ imagen }}" alt="Gato">
-        </th>
-        {{ img_id }}
+        {{ id }}
+        <td>
+            <form method="POST" action="{{ url_for('verificar_respuesta') }}">
+                <input type="hidden" name="id_correcto" value="{{ id }}">
+                <input type="hidden" name="nombre_correcto" value="{{ nombre_correcto }}">
+                {% for raza in lista %}
+                    <button type="submit" class="btn btn-success" name="seleccion" value="{{ raza }}">{{ raza }}</button>
+                {% endfor %}
+            </form>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="https://cdn2.thecatapi.com/images/{{ imagen }}.jpg" alt="Imagen de gato" />
+        </td>
     </tr>
 </table>
 {% endblock %}
+
