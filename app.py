@@ -8,6 +8,7 @@ app = Flask(__name__)
 datos_razas=[]
 url_todo="https://api.thecatapi.com/v1/breeds"
 url_key="https://api.thecatapi.com/v1/images/search?limit=10&breed_ids="
+url_ramdom="https://api.thecatapi.com/v1/images/search?limit=10"
 
 load_dotenv ()
 API_KEY=os.getenv('KEY')
@@ -112,6 +113,17 @@ def razaid(id):
             url_imagenes = [imagen["url"] for imagen in imagenes_json]
             return render_template("detalle.html", nombre=raza["name"], descripcion=raza["description"], imagenes=url_imagenes)
     return abort(404)
+
+
+@app.route('/galeria')
+def imagenes_aleatorias():
+    img=requests.get(url_ramdom)
+    img=img.json()
+    url=[]
+    for imagen in img:
+        url.append(imagen["url"])
+    
+    return render_template('galería.html',imagenes=url)
 
 
 app.run("0.0.0.0",5000,debug=True)
