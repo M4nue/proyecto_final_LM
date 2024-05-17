@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block title %}Resultado{% endblock %}
+
+{% block contenido %}
+<p>{{ mensaje }}</p>
+<a href="{{ url_for('adivina') }}">Volver a jugar</a>
+{% endblock %}
