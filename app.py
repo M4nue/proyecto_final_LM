@@ -110,7 +110,9 @@ def razaid(id):
         if raza["id"] == id:
             imagenes_get = requests.get(url_key + raza["id"] + "&api_key=" + API_KEY, timeout=10)
             imagenes_json = imagenes_get.json()
-            url_imagenes = [imagen["url"] for imagen in imagenes_json]
+            url_imagenes = []
+            for imagen in imagenes_json:
+                url_imagenes.append(imagen["url"])
             return render_template("detalle.html", nombre=raza["name"], descripcion=raza["description"], imagenes=url_imagenes)
     return abort(404)
 
