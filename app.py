@@ -6,6 +6,8 @@ import random
 
 app = Flask(__name__)
 datos_razas=[]
+url_todo="https://api.thecatapi.com/v1/breeds"
+url_key="https://api.thecatapi.com/v1/images/search?limit=10&breed_ids="
 
 load_dotenv ()
 API_KEY=os.getenv('KEY')
@@ -20,7 +22,7 @@ def divide_chunks(lista, n):
 @app.route('/')
 def inico():
     datos_razas.clear()
-    razas = requests.get("https://api.thecatapi.com/v1/breeds")
+    razas = requests.get(url_todo)
     razas_json= razas.json()
 
     for raza in razas_json:
@@ -35,7 +37,7 @@ def inico():
 
     # Paginación
     pagina = request.args.get('page', 1, type=int)
-    tamano_pagina = 15  # Número de razas por página
+    tamano_pagina = 15
     paginas_razas = list(divide_chunks(list_raza, tamano_pagina))
     raza_paginada = paginas_razas[pagina - 1]
 
@@ -54,7 +56,6 @@ def adivina():
             imagen_raza = raza_acertada["reference_image_id"]
             break
         else:
-            # Opcionalmente, manejar el caso en que 'reference_image_id' no está presente
             print(f"reference_image_id no encontrado en {raza_acertada}")
 
     nombres = []
@@ -106,7 +107,7 @@ def lista():
 def razaid(id):
     for raza in datos_razas:
         if raza["id"] == id:
-            imagenes_get = requests.get("https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=" + raza["id"] + "&api_key=" + API_KEY, timeout=10)
+            imagenes_get = requests.get(url_key + raza["id"] + "&api_key=" + API_KEY, timeout=10)
             imagenes_json = imagenes_get.json()
             url_imagenes = [imagen["url"] for imagen in imagenes_json]
             return render_template("detalle.html", nombre=raza["name"], descripcion=raza["description"], imagenes=url_imagenes)
