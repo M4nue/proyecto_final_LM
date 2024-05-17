@@ -2,6 +2,7 @@ from flask import Flask, render_template, abort, request
 import requests
 import os
 from dotenv import load_dotenv
+import random
 
 app = Flask(__name__)
 datos_razas=[]
@@ -17,7 +18,7 @@ def divide_chunks(lista, n):
 
 
 @app.route('/')
-def razas():
+def inico():
     datos_razas.clear()
     razas = requests.get("https://api.thecatapi.com/v1/breeds")
     razas_json= razas.json()
@@ -41,16 +42,45 @@ def razas():
     return render_template("inicio.html", razas_gato=raza_paginada, id=list_id, paginas=len(paginas_razas))
 
 
-@app.route('/10img')
-def inicio():
-    codigo = requests.get("https://api.thecatapi.com/v1/images/search?limit=10")
-    contenido=codigo.json()
-    url_imagenes = []
+@app.route('/adivina')
+def adivina():
+    while True:
+        posicion_aleatoria = random.randint(0, len(datos_razas) - 1)
+        raza_acertada = datos_razas[posicion_aleatoria]
+        
+        if "reference_image_id" in raza_acertada:
+            nombre = raza_acertada["name"]
+            id_raza = raza_acertada["id"]
+            imagen_raza = raza_acertada["reference_image_id"]
+            break
+        else:
+            # Opcionalmente, manejar el caso en que 'reference_image_id' no está presente
+            print(f"reference_image_id no encontrado en {raza_acertada}")
 
-    for url in contenido:
-        url_imagenes.append(url["url"])
+    nombres = []
+    if posicion_aleatoria > 0:
+        nombres.append(datos_razas[posicion_aleatoria - 1]["name"])
+    if posicion_aleatoria < len(datos_razas) - 1:
+        nombres.append(datos_razas[posicion_aleatoria + 1]["name"])
 
-    return render_template("10img.html",imagenes=url_imagenes)
+    nombres.insert(random.randint(0, len(nombres)), nombre)
+
+    return render_template("adivina.html", lista=nombres, imagen=imagen_raza, id=id_raza, nombre_correcto=nombre)
+
+
+
+@app.route('/verificar_respuesta', methods=['POST'])
+def verificar_respuesta():
+    seleccion = request.form['seleccion']
+    id_correcto = request.form['id_correcto']
+    nombre_correcto = request.form['nombre_correcto']
+
+    if seleccion == nombre_correcto:
+        mensaje = "OK"
+    else:
+        mensaje = "Fallo"
+
+    return render_template("resultado.html", mensaje=mensaje)
 
 
 @app.route('/buscador')
@@ -58,6 +88,7 @@ def buscador():
     raza = request.args.get('raza', '') 
     valor=print(raza)
     return render_template("buscador.html",nombre=valor, raza=raza)
+
 
 @app.route('/lista', methods=["post"])
 def lista():
@@ -69,7 +100,6 @@ def lista():
                                 origen=datos["origin"],descripcion=datos["description"],vida=datos["life_span"],
                                 relacion_perros=datos["dog_friendly"],imagen=datos["reference_image_id"])
     return abort(404)
-
 
 
 @app.route('/detalle/<id>')
