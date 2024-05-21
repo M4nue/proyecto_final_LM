@@ -160,7 +160,6 @@ footer a img {
   font-size: 16px;
 }
 
-/* Media Queries for responsive design */
 @media (max-width: 768px) {
   #logo_text h1, #logo_text h1 a {
     font-size: 150%;
