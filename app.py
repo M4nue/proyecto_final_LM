@@ -1,5 +1,6 @@
 from flask import Flask, render_template, abort, request
 import requests
+from requests.exceptions import JSONDecodeError
 import os
 from dotenv import load_dotenv
 import random
@@ -23,8 +24,21 @@ def divide_chunks(lista, n):
 @app.route('/')
 def inico():
     datos_razas.clear()
-    razas = requests.get(url_todo)
-    razas_json= razas.json()
+
+    try:
+        razas = requests.get(url_todo)
+        razas.raise_for_status()
+
+        try:
+            razas_json = razas.json()
+        except JSONDecodeError:
+            print("La respuesta no es un JSON válido")
+            print("Contenido de la respuesta:", razas.text)
+            return "Error: La respuesta del servidor no es válida", 500
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error en la solicitud HTTP: {e}")
+        return f"Error en la solicitud HTTP: {e}", 500
 
     for raza in razas_json:
         datos_razas.append(raza)
@@ -35,8 +49,6 @@ def inico():
         list_raza.append(raza["name"])
         list_id.append(raza["id"])
 
-
-    # Paginación
     pagina = request.args.get('page', 1, type=int)
     tamano_pagina = 15
     paginas_razas = list(divide_chunks(list_raza, tamano_pagina))
