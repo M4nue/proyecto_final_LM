@@ -1,16 +1,20 @@
-html, #logo {
+html, body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font: .80em 'trebuchet ms', arial, sans-serif;
+  font: 0.80em 'Trebuchet MS', Arial, sans-serif;
   background-color: #FFF;
   color: #555;
 }
 
 ul {
   list-style: none;
+  padding: 0;
 }
 
 ul li {
@@ -22,22 +26,25 @@ ul li {
 #header {
   background-color: #000;
   border-bottom: 5px solid #c3ffa8;
-  height: 177px;
+  height: auto;
+  padding: 10px 0;
 }
 
 #logo {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: transparent;
 }
 
 #logo #logo_text {
   display: flex;
+  align-items: center;
   margin-left: 3%;
 }
 
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover {
-  font: normal 200% 'century gothic', arial, sans-serif;
+  font: normal 200% 'Century Gothic', Arial, sans-serif;
   border-bottom: 0;
   text-transform: none;
   margin: 0 0 0 9px;
@@ -47,12 +54,9 @@ ul li {
   text-decoration: none;
 }
 
-#content, #tabla {
+#content {
   text-align: center;
   width: 100%;
-}
-
-#content {
   padding: 10%;
 }
 
@@ -69,8 +73,8 @@ ul li {
 }
 
 #imagen_logo_menu {
-  width: 35%;
-  height: 85%;
+  width: 50px; /* Adjusted for responsive design */
+  height: auto;
 }
 
 footer {
@@ -78,14 +82,15 @@ footer {
   border-top: 5px solid #c3ffa8;
   bottom: 0;
   width: 100%;
-  height: 5%;
+  height: 50px;
   text-align: center;
   background-color: #000;
   color: #FFF;
 }
 
 footer a img {
-  width: 2%;
+  width: 30px;
+  height: auto;
 }
 
 #detalles1 {
@@ -126,22 +131,13 @@ footer a img {
   background-color: #28a745;
 }
 
-
-.pagination a {
+.pagination a, .pagination span {
   background-color: #28a745;
   color: #FFF;
   padding: 5px 10px;
   text-decoration: none;
   border-radius: 3px;
-  margin-right: 5px; 
-}
-
-.pagination span {
-  background-color: #28a745;
-  color: #FFF;
-  padding: 5px 10px;
-  border-radius: 3px;
-  margin-right: 5px; 
+  margin-right: 5px;
 }
 
 .table-responsive {
@@ -150,14 +146,67 @@ footer a img {
   margin: auto;
   text-align: center;
 }
+
 .table-responsive img {
   width: 100%;
   height: auto;
 }
+
 .table-responsive button {
   display: block;
   width: 100%;
   margin: 5px 0;
   padding: 10px;
   font-size: 16px;
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+  #logo_text h1, #logo_text h1 a {
+    font-size: 150%;
+  }
+
+  #content {
+    padding: 5%;
+  }
+
+  .nav-link.btn.btn-success {
+    display: block;
+    margin: 5px 0;
+  }
+
+  #imagen_logo_menu {
+    width: 30px;
+  }
+
+  footer {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  footer a img {
+    width: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  #logo_text h1, #logo_text h1 a {
+    font-size: 120%;
+  }
+
+  #content {
+    padding: 3%;
+  }
+
+  .nav-link.btn.btn-success {
+    margin: 3px 0;
+  }
+
+  #imagen_logo_menu {
+    width: 25px;
+  }
+
+  footer a img {
+    width: 15px;
+  }
 }
