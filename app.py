@@ -91,7 +91,7 @@ def buscador():
     razas_nombre = []
     for i in datos_razas:
         razas_nombre.append(i["name"])
-    return render_template("buscador.html", raza=raza, razas=razas_nombre)
+    return render_template("buscador.html", razas=razas_nombre)
 
 @app.route('/lista', methods=["post"])
 def lista():
