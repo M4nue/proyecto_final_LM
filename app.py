@@ -48,7 +48,7 @@ def inico():
 @app.route('/adivina')
 def adivina():
     while True:
-        posicion_aleatoria = random.randint(0, len(datos_razas) - 1)
+        posicion_aleatoria = random.randint(1, len(datos_razas) - 1)
         raza_acertada = datos_razas[posicion_aleatoria]
         
         if "reference_image_id" in raza_acertada:
@@ -88,9 +88,10 @@ def verificar_respuesta():
 @app.route('/buscador')
 def buscador():
     raza = request.args.get('raza', '') 
-    valor=print(raza)
-    return render_template("buscador.html",nombre=valor, raza=raza)
-
+    razas_nombre = []
+    for i in datos_razas:
+        razas_nombre.append(i["name"])
+    return render_template("buscador.html", raza=raza, razas=razas_nombre)
 
 @app.route('/lista', methods=["post"])
 def lista():

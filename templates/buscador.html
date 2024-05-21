@@ -5,8 +5,12 @@
 {% block contenido %}
 
     <form method="post" action="/lista">
-        <label for="raza" class="form-label">Escriba nombre de la raza</label>
-        <input type="text" placeholder="raza" name="raza" value="{{ raza }}">
+        <label for="raza" class="form-label">Selecciona la raza</label>
+        <select name="raza">
+            {% for i in razas %}
+                <option value="{{ i }}"> {{ i }} </option>
+            {% endfor %}
+        </select>
         <button type="submit" class="btn btn-success">Enviar</button>
     </form>
 {% endblock %}
